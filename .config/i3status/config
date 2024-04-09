@@ -2,6 +2,7 @@
 #
 # see "man i3status" for documentation.
 
+
 # General settings
 general {
     colors = true
@@ -14,7 +15,6 @@ order += "cpu_usage"
 order += "disk /"
 order += "memory /"
 order += "battery 0"
-order += "load"
 order += "tztime local"
 
 # Configuration for Wireless
@@ -23,10 +23,9 @@ wireless _first_ {
     format_down = "WiFi: down"
 }
 
-# CPU usage (You might need to install i3status-contrib for this)
 cpu_usage {
     format = "CPU: %usage"
-    max_threshold = 80
+    max_threshold = 75
 }
 
 # Disk usage
@@ -39,16 +38,11 @@ memory {
     threshold_degraded = "10%"
     format_degraded = "MEMORY: %free"
 }
-#
+
 # Battery status
 battery 0 {
-    format = "Battery: %status %percentage %remaining"
+    format = "%status %percentage %remaining"
     format_down = "No Battery"
-}
-
-# Load average
-load {
-    format = "Load: %1min"
 }
 
 # Local time

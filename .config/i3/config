@@ -205,6 +205,11 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status
 		tray_output primary
+	colors {
+       statusline #00BFFF
+       background #000000
+       separator #666666 
+    }
 }
 
 # ------------------------------------------
@@ -236,16 +241,14 @@ bindsym $mod+Shift+period exec systemctl suspend
 
 # Assign applications to workspaces
 assign [class="Gnome-terminal"] → 1
-assign [class="Google-chrome"] → 2
-assign [class="Code"] → 3
+assign [class="Code"] → 2
+assign [class="Google-chrome"] → 3
 assign [class="discord"] → 4
-assign [class="Postman"] → 5
 
 # Start applications on login
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
-exec --no-startup-id sleep 1; i3-msg  'workspace 2; exec google-chrome'
-exec --no-startup-id sleep 2; i3-msg  'workspace 3; exec code'
+exec --no-startup-id sleep 1; i3-msg  'workspace 2; exec code'
+exec --no-startup-id sleep 2; i3-msg  'workspace 3; exec google-chrome
 exec --no-startup-id sleep 3; i3-msg  'workspace 4; exec discord'
-exec --no-startup-id sleep 4; i3-msg  'workspace 5; exec postman'
 
 
