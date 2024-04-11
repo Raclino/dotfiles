@@ -119,3 +119,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+ xinput set-prop "ELAN1200:00 04F3:30F7 Touchpad" "libinput Natural Scrolling Enabled" 1
